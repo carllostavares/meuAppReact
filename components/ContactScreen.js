@@ -1,6 +1,6 @@
 // components/ContactScreen.js
 import React from 'react';
-import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const ContactScreen = () => {
   const openLinkedInProfile = () => {
@@ -25,6 +25,12 @@ const ContactScreen = () => {
 
   return (
     <View style={styles.container}>
+            <View style={styles.header}>
+        <Image
+          source={require('../assets/profile.png')}
+          style={styles.profileImage}
+        />
+      </View>
       <Text style={styles.title}>Informações de Contato</Text>
 
       <View style={styles.contactContainer}>
@@ -51,9 +57,13 @@ const ContactScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: 16,
+    alignItems: 'center',
+  },
+  profileImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
   },
   title: {
     fontSize: 24,
